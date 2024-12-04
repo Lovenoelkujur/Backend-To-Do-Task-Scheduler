@@ -20,7 +20,7 @@ app.use("/api/v1", router);
 // Cors
 app.use(
     cors({
-        origin : "http://localhost:5173",
+        origin : "https://frontend-to-do-task-scheduler.vercel.app",
         methods : ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true,
