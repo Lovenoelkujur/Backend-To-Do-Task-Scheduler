@@ -9,25 +9,23 @@ const app = express();
 
 dotenv.config();
 
-const PORT = process.env.PORT || 9000;
-
-// Middleware
-app.use(express.json());
-
-// Main Route
-app.use("/api/v1", router);
+const PORT = 10000;
 
 // Cors
 app.use(
     cors({
-        origin : "https://frontend-to-do-task-scheduler.vercel.app",
+        origin : "http://localhost:5173",
         methods : ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true,
     })
 );
 
-app.options("*", cors()); // Handle preflight requests
+// Middleware
+app.use(express.json());
+
+// Main Route
+app.use("/api/v1", router);
 
 
 // DB Connection
